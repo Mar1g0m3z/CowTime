@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <div id ="ball" style="
+z-index:5;
+position:absolute;
+left:200px;
+top:300px;
+width:100px;
+height:100px;
+border-radius:50%;
+background: rgb(255, 255, 255);
+border: 5px solid hsl(0, 0%, 0%);"></div>
+
+
+<script>
+var velocity = 423
+var positionX = 200;
+var position = 0; 
+var ball = document.getElementById('ball');
+var reverse = false;
+
+
+function moveBall(){
+   
+ ball.style.left = positionX + 'px';
+
+var Xmin = 200;
+ var Xmax = 1000;
+ 
+
+
+  if (reverse) {
+    positionX = positionX - velocity;
+    ball.style.left = positionX + "px";
+    
+  } else {
+    positionX = positionX + velocity;
+
+    ball.style.left = positionX + "px";
+    
+  }
+
+  if (
+    positionX > Xmax ||
+    positionX === Xmin 
+ 
+  ) {
+    reverse = !reverse;
+  }
+}
+
+setInterval(moveBall, 150);
+
+
+</script>
+    <style>
+        @font-face {
+    font-family: 'chubby_chooregular';
+    src: url('chubbychoo-regular-webfont.woff2') format('woff2'),
+         url('chubbychoo-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+    h1 {font-family: 'chubby_chooregular';
+    color: rgb(106, 67, 56);
+    text-shadow:
+    -5px -5px 0 #000000,
+    5px -5px 0 #000,
+    -5px 5px 0 #000,
+    5px 5px 0 #000;  ;
+font-size:100px
+
+}
+p {font-family: 'chubby_chooregular';
+color:whitesmoke;
+text-shadow:
+-2px -2px 0 #000000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    2px 2px 0 #000;  ;
+font-size:50px;
+text-align: center;
+
+}
+
+body 
+{background-image: url('farm.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;}
+
+    </style>
+<h1><center>Cow Time</center></h1>
+
+<p>The cow plays with the egg ball...thing</p>
+<img align= "right" src="cow.gif" width="300" height="400"> 
+<img align= "left" src="cowL.gif" width="300" height="400"> 
